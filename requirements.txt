@@ -1,5 +1,4 @@
 joblib == 1.2.0
 matplotlib == 3.7.2
 flask == 2.2.5
-# scikit-learn == 1.5.1
-scikit-learn
+scikit-learn == 1.5.1
