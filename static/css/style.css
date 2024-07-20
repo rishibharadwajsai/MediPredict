@@ -174,12 +174,13 @@ body {
   border-radius: 50%;
   border: 5px solid white;
   padding-top: -10px;
+  opacity: 0.85;
 }
 
 .image-container {
   display: inline-block;
   position: relative;
-  padding: 10px; /* Adjust padding as needed */
+  padding: 10px;
 }
 .image-container::before {
   content: "";
