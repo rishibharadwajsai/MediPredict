@@ -29,7 +29,7 @@ Follow these steps to set up the project locally:
 ## usage
 1.Clone the repository:
 ```bash
-git clone https://github.com/rishibharadwajsai7/Health-care-center.git
+git clone https://github.com/rishibharadwajsai/Health-care-center.git
 ```
 2.Navigate to the project directory.
 
