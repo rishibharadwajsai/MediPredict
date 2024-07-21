@@ -178,5 +178,6 @@ body {
 }
 
 #Image {
-  overflow: scroll;
+  overflow-x: auto;
+  overflow-y: auto;
 }
