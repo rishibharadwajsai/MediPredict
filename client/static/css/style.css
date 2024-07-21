@@ -180,4 +180,6 @@ body {
 #Image {
   overflow-x: auto;
   overflow-y: auto;
+  width: 400px;
+  height: 200px;
 }
