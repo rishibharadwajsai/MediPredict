@@ -42,58 +42,6 @@ body {
   margin-top: 4%;
   margin-right: 20%;
 }
-.Inputs {
-  text-align: center;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 30px;
-  color: rgb(25, 25, 25);
-  text-align: left;
-  margin-left: 10%;
-}
-.inputName {
-  border-radius: 4px;
-  border-width: 0px;
-  box-shadow: 3px 2px 1px rgba(0, 0, 0, 0.5);
-  width: auto;
-  height: auto;
-}
-.inputAge {
-  border-radius: 4px;
-  border-width: 0px;
-  box-shadow: 3px 2px 1px rgba(0, 0, 0, 0.5);
-  width: 50px;
-  height: 20px;
-}
-.inputHeight {
-  border-radius: 4px;
-  border-width: 0px;
-  box-shadow: 3px 2px 1px rgba(0, 0, 0, 0.5);
-}
-.inputWeight {
-  border-radius: 4px;
-  border-width: 0px;
-  box-shadow: 3px 2px 1px rgba(0, 0, 0, 0.5);
-}
-.inputCholesterol {
-  border-radius: 4px;
-  border-width: 0px;
-  box-shadow: 3px 2px 1px rgba(0, 0, 0, 0.5);
-}
-.inputAp_hi {
-  border-radius: 4px;
-  border-width: 0px;
-  box-shadow: 3px 2px 1px rgba(0, 0, 0, 0.5);
-}
-.inputAp_lo {
-  border-radius: 4px;
-  border-width: 0px;
-  box-shadow: 3px 2px 1px rgba(0, 0, 0, 0.5);
-}
-.inputGlucose {
-  border-radius: 4px;
-  border-width: 0px;
-  box-shadow: 3px 2px 1px rgba(0, 0, 0, 0.5);
-}
 .Submit {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   border-radius: 3px;
@@ -188,7 +136,7 @@ body {
   width: 520px;
   height: 520px;
   border-radius: 50%;
-  border: 5px solid #ffffff; /* Middle ring color */
+  border: 5px solid #ffffff;
 }
 
 .image-container::after {
@@ -197,5 +145,38 @@ body {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  border: 5px solid #ffffff; /* Inner ring color */
+  border: 5px solid #ffffff;
+}
+
+.container input {
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.input-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.input-container {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.064);
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.item-div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.output-container{
+  min-height: 400px;
 }
