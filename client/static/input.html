@@ -10,95 +10,140 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <title>Document</title>
+    <title>Predict</title>
   </head>
   <body>
-    <div class="inputContainer">
-      <div class="Inputs">
-        <h2 class="Headder">Enter Detailes</h2>
-        <label for="name">name:</label>
-        <input
-          type="text"
-          class="inputName"
-          name="name"
-          id="name"
-          placeholder="sia"
-        />
-        <br />
-        <br /><br />
-        <label for="age">age:</label>
-        <input
-          type="number"
-          class="inputAge"
-          name="age"
-          id="age"
-          placeholder="39"
-        />
-        <br />
-        <br /><br />
-        <label for="height">Height(cm's):</label>
-        <input
-          type="number"
-          class="inputHeight"
-          name="height"
-          id="height"
-          placeholder="156"
-        />
-        <br /><br />
-        <br />
-        <label for="weight">weight(kg's):</label>
-        <input
-          type="number"
-          class="inputWeight"
-          name="weight"
-          id="weight"
-          placeholder="50"
-        />
-        <br /><br /><br />
-        <label for="cholesterol">Cholesterol(mg/dl):</label>
-        <input
-          type="number"
-          class="inputCholesterol"
-          name="cholesterol"
-          id="cholesterol"
-          placeholder="200"
-        />
-        <br /><br /><br />
-        <label for="bloodPressure">Blood Pressure:</label>
-        <input
-          type="number"
-          name="ap_hi"
-          id="ap_hi"
-          class="inputAp_hi"
-          placeholder="120"
-        />&nbsp;
-        <input
-          type="number"
-          name="ap_lo"
-          id="ap_lo"
-          class="inputAp_lo"
-          placeholder="80"
-        />
-        <br /><br /><br />
-        <label for="glucose">Glucose levels(mg/dl):</label>
-        <input
-          type="number"
-          name="glucose"
-          id="glucose"
-          class="inputGlucose"
-          placeholder="100"
-        />
-        <br /><br />
-        <br />
+    <!-- Navbar starts -->
+
+    <nav class="navbar z-3">
+      <div class="container-fluid">
+        <a href="/" class="navbar-brand fw-bolder">Health Care Center</a>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
       </div>
+    </nav>
+
+    <!-- Navbar ends -->
+
+    <div class="container input-container border border-dark rounded mt-5">
+      <center>
+        <h2 class="my-5 fw-semibold">Enter your details</h2>
+      </center>
+      <center class="">
+        <div class="input-div my-1">
+          <div class="my-2 item-div">
+            <label for="name" class="fw-semibold my-1 mx-1">Name</label>
+            <input
+              type="text"
+              class="rounded bg-white ps-2"
+              name="name"
+              id="name"
+              placeholder="Enter your name"
+            />
+          </div>
+          <div class="my-2 item-div">
+            <label for="age" class="fw-semibold my-1 mx-1">Age</label>
+            <input
+              type="number"
+              class="rounded bg-white ps-2"
+              name="age"
+              id="age"
+              placeholder="Enter your age"
+            />
+          </div>
+        </div>
+
+        <div class="input-div my-1">
+          <div class="my-2 item-div">
+            <label for="height" class="fw-semibold my-1 mx-1">Height</label>
+            <input
+              type="number"
+              class="rounded bg-white ps-2"
+              name="height"
+              id="height"
+              placeholder="Height in cm's"
+            />
+          </div>
+          <div class="my-2 item-div">
+            <label for="weight" class="fw-semibold my-1 mx-1">Weight</label>
+            <input
+              type="number"
+              class="rounded bg-white ps-2"
+              name="weight"
+              id="weight"
+              placeholder="Weight in kg's"
+            />
+          </div>
+        </div>
+
+        <div class="input-div my-1">
+          <div class="my-2 item-div">
+            <label for="cholesterol" class="fw-semibold my-1 mx-1"
+              >Cholesterol</label
+            >
+            <input
+              type="number"
+              class="rounded bg-white ps-2"
+              name="cholesterol"
+              id="cholesterol"
+              placeholder="Cholesterol in mg/dl"
+            />
+          </div>
+          <div class="my-2 item-div">
+            <label for="glucose" class="fw-semibold my-1 mx-1"
+              >Glucose levels</label
+            >
+            <input
+              type="number"
+              name="glucose"
+              id="glucose"
+              class="rounded bg-white ps-2"
+              placeholder="Glucose levels in mg/dl"
+            />
+          </div>
+        </div>
+        <div class="input-div my-1">
+          <div class="my-2 item-div">
+            <label for="bloodPressure" class="fw-semibold my-1 mx-1"
+              >Blood Pressure</label
+            >
+            <input
+              type="number"
+              name="ap_hi"
+              id="ap_hi"
+              class="rounded bg-white mx-1 my-1 ps-2"
+              placeholder="120"
+            />
+            <input
+              type="number"
+              name="ap_lo"
+              id="ap_lo"
+              class="rounded bg-white mx-1 my-1 ps-2"
+              placeholder="80"
+            />
+          </div>
+        </div>
+      </center>
 
       <center>
-        <button onclick="submitForm()" class="btn btn-success">Submit</button>
+        <button onclick="submitForm()" class="btn btn-success mt-3 mb-4">
+          Submit
+        </button>
       </center>
-      
     </div>
-    <div class="outputContainer">
-      <h2>Output:</h2>
+
+    <div
+      class="container input-container mt-4 mb-4 border border-dark rounded"
+      style="min-height: 400px"
+    >
+      <h2 class="mt-2 fw-semibold">Output</h2>
       <div class="output">
         <div id="Output"></div>
         <div id="Image"></div>
