@@ -2,6 +2,7 @@ import joblib
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import io
+import os
 import numpy as np
 
 # Covid Model
@@ -77,8 +78,8 @@ class Cardiac_Model:
     
     def predict(L):
         res = []
-        # model_path = os.path.join('sever','cardio_disease_prob')
-        model = joblib.load('./server/cardio_disease_prob')
+        model_path = os.path.join('.','sever','cardio_disease_prob')
+        model = joblib.load(model_path)
         res.append(L[0]) # age index-0
         res.append(L[3]) # ap_hi index-1
         res.append(L[4]) # ap_lo index-2
