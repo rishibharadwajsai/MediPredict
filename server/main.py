@@ -1,7 +1,59 @@
 import joblib
+import tensorflow as tf
 import matplotlib.pyplot as plt
 import io
-class Model:
+
+# Covid Model
+class Covid_Model:
+    def predict( self , images):
+        model = tf.keras.models.load_model("covid19_CNN")
+        class_names = ["covid" , "Normal" , "Viral Pneumonia"]
+        #plt.imshow(images)
+        # Optionally, resize the image
+        predicted_class_names = []
+        # Ensure the batch size is 32
+        if images.shape[0] < 32:
+            images = np.tile(images, (32 // images.shape[0] + 1, 1, 1, 1))[:32]
+
+        print(images.shape)
+        prediction = model.predict(images)
+        
+        for indices in prediction:
+            index = np.argmax(indices)
+            class_name = class_names[index]
+            predicted_class_names.append(class_name)
+        #print(predicted_class_names[0])
+        return predicted_class_names[0]
+
+# Covid model image generator
+class Image_generator:
+    def generate_images(self , image):
+       # image = tf.image.resize(image, [180, 180])
+       # image = tf.expand_dims(image, axis=0)
+        images = []
+        
+        datagen = tf.keras.preprocessing.image.ImageDataGenerator(
+                rotation_range=0,
+                width_shift_range=0,
+                height_shift_range=0,
+                shear_range=0,
+                zoom_range=0,
+                horizontal_flip=False,
+                fill_mode='nearest'
+            )
+        image_gen = datagen.flow(image, batch_size=1)
+
+        # Generate and store images
+        for _ in range(5):
+            generated_image = image_gen.next()
+            images.append(generated_image[0])
+            
+        images = np.array(images)
+        
+        return images
+
+# cardiac Model
+class Cardiac_Model:
     # get cholesterol
     def cholesterolLevel(value):
         if(value<200):
@@ -42,7 +94,8 @@ class Model:
         # print(result[0,:])
         return round(result[0,1],3)
 
-class Result:
+
+class Cardiac_image_Result:
     def get_image(value):
         color=""
         title = ""
