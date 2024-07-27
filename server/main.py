@@ -82,13 +82,13 @@ class Cardiac_Model:
         res.append(L[3]) # ap_hi index-1
         res.append(L[4]) # ap_lo index-2
         
-        cholesterol = Model.cholesterolLevel(L[5])
+        cholesterol = Cardiac_Model.cholesterolLevel(L[5])
         res.append(cholesterol) # cholesterol index-3
        
-        glucose = Model.glucLevel(L[6])
+        glucose = Cardiac_Model.glucLevel(L[6])
         res.append(glucose)# gluc index-4
         
-        BMI = Model.getBMI(L[1],L[2])
+        BMI = Cardiac_Model.getBMI(L[1],L[2])
         res.append(BMI) # BMI   index-5
         
         result = model.predict_proba([res])
