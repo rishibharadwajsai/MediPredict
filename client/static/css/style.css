@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background: rgb(224, 255, 222);
+  background: linear-gradient(
+    38deg,
+    rgba(224, 255, 222, 1) 44%,
+    rgba(78, 255, 164, 1) 96%,
+    rgba(91, 251, 168, 1) 100%
+  );
+}
+.output {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.titleContainer {
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+  margin-left: -2%;
+  margin-right: -1.2%;
+  margin-top: -2%;
+  /* width: 100%; */
+  height: 70px;
+  /* line-height: 20px; */
+  padding: 10px;
+}
+
+.inputContainer {
+  background-color: rgba(113, 216, 242, 0.579);
+  padding: 10px;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  margin-left: 20%;
+  margin-top: 4%;
+  margin-right: 20%;
+}
+.Submit {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-radius: 3px;
+  border-width: 1px;
+  border-color: rgb(27, 27, 27);
+  font-size: 27px;
+  margin-left: 40%;
+  background-color: rgb(53, 53, 53);
+  color: rgb(231, 244, 255);
+}
+.headder {
+  /* margin-left: 20%; */
+  text-align: center;
+  /* margin-bottom: 60%; */
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: auto;
+}
+.outputContainer {
+  background-color: rgba(234, 245, 255, 0.579);
+  padding: 10px;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-left: 3%;
+  margin-top: 4%;
+  margin-right: 50%;
+}
+
+.main-container {
+  height: 100%;
+  min-height: 100vh;
+  min-width: 100%;
+  position: relative;
+}
+
+.content-container {
+  width: 400px;
+  border: 2px solid white;
+  padding: 20px;
+  background: rgb(224, 255, 222);
+  background: linear-gradient(
+    21deg,
+    rgba(224, 255, 222, 1) 59%,
+    rgba(78, 255, 164, 1) 100%,
+    rgba(91, 251, 168, 1) 100%
+  );
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.464);
+  transition: background 0.5s ease;
+}
+.custom-shape-divider-bottom-1721411698 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1721411698 svg {
+  position: relative;
+  display: block;
+  width: calc(119% + 1.3px);
+  height: 266px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1721411698 .shape-fill {
+  fill: #ffffff;
+}
+
+.doctor-img {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 5px solid white;
+  padding-top: -10px;
+  opacity: 0.85;
+}
+
+.image-container {
+  display: inline-block;
+  position: relative;
+  padding: 10px;
+}
+.image-container::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+}
+
+.image-container::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+}
+
+.container input {
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.input-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.input-container {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.064);
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.item-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#Image {
+  overflow-x: auto;
+  overflow-y: auto;
+  width: 400px;
+  height: 200px;
+}

@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request, jsonify
 from main import Model , Result
 import base64
-app = Flask(__name__, template_folder='pages', static_folder='static')
+import os
+app = Flask(__name__,
+            template_folder=os.path.join('..', 'client', 'pages'),
+            static_folder=os.path.join('..', 'client', 'static'))
 
 @app.route('/')
 def home():
@@ -26,4 +29,5 @@ def predict_probability():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(port=3000 , debug=True)
+    # app.run(debug=True)
+    app.run(host= '0.0.0.0',   debug=True)
