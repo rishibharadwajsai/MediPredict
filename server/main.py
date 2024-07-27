@@ -2,11 +2,12 @@ import joblib
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import io
+import numpy as np
 
 # Covid Model
 class Covid_Model:
     def predict( self , images):
-        model = tf.keras.models.load_model("covid19_CNN")
+        model = tf.keras.models.load_model("./server/covid19_CNN")
         class_names = ["covid" , "Normal" , "Viral Pneumonia"]
         #plt.imshow(images)
         # Optionally, resize the image

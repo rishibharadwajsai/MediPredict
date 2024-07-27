@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from main import Cardiac_image_Result , Cardiac_Model
+from main import Cardiac_image_Result , Cardiac_Model , Covid_Model , Image_generator
 import io
 import tensorflow as tf
 import base64
@@ -42,7 +42,7 @@ def predict():
         if file.filename == '':
             return jsonify({'error': 'No selected file'})
         if file:
-            file_path = "../server/temp"+file.filename
+            file_path = "temp/"+file.filename
             file.save(os.path.join("temp", file.filename))
             image = tf.io.read_file(file_path)
             image = tf.image.decode_png(image, channels=3)
@@ -50,7 +50,7 @@ def predict():
             image = tf.expand_dims(image, axis=0)
             datagen = Image_generator()
             images = datagen.generate_images(image)
-            model = Model()
+            model = Covid_Model()
             prediction = model.predict(images)
             print(prediction)
             os.remove(file_path)
