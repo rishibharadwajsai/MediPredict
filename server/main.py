@@ -78,7 +78,7 @@ class Cardiac_Model:
     
     def predict(L):
         res = []
-        model_path = os.path.join('.','sever','cardio_disease_prob')
+        model_path = os.path.join('./server/cardio_disease_prob')
         model = joblib.load(model_path)
         res.append(L[0]) # age index-0
         res.append(L[3]) # ap_hi index-1
@@ -97,8 +97,15 @@ class Cardiac_Model:
         # print(result[0,:])
         return round(result[0,1],3)
 
+class Diabetes_Model:
+    def Predicit(L):
+        DB = {0:"NO DB" , 1:"DB"}
+        model = joblib.load("./server/Diabetes.joblib")
+        result = model.predict_proba(L)
+        print(DB[np.argmax(result)])
+        return result
 
-class Cardiac_image_Result:
+class image_Result:
     def get_image(value):
         color=""
         title = ""
