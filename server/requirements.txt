@@ -16,9 +16,9 @@ gunicorn==23.0.0
 h5py==3.11.0
 idna==3.7
 itsdangerous==2.2.0
-Jinja2==3.1.4
+Jinja2==3.1.5
 joblib==1.4.2
-keras==3.4.1
+keras==3.8.0
 kiwisolver==1.4.5
 libclang==18.1.1
 Markdown==3.6
@@ -51,6 +51,6 @@ termcolor==2.4.0
 threadpoolctl==3.5.0
 typing_extensions==4.12.2
 urllib3==2.2.2
-Werkzeug==3.0.3
+Werkzeug==3.0.6
 wheel==0.45.1
 wrapt==1.16.0
