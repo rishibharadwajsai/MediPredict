@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Diabetes</title>
+</head>
+<body>
+    <div class="Title">Diabetes Prediction for Women</div>
+    <div class="Input_container">
+        <label for="name">name: </label>
+        <input type="text" class="inputName" name="name" id="name" >
+        <br>
+        <label for="age">Age: </label>
+        <input type="number" class="input_Age" name="age" id="age">
+        <br>
+        <label for="Height">Height:</label>
+        <input type="number" class="input_Height" name="Height" id="Height">
+        <br>
+        <label for="Weight">Weight:</label>
+        <input type="number" class="input_Weight" name="Weight" id="Weight">
+        <br>
+        <label for="BloodPressure">BloodPressure: </label>
+        <input type="number" class="input_BP" name="BloodPressure" id="BloodPressure">
+        <br>
+        <label for="Pregnancies">No of Pregnancies:</label>
+        <input type="number" class="inputPregnancies" name="Pregnancies" id="Pregnancies">
+        <br>
+        <label for="Glucose">Glucose &nbsp; levels :</label>
+        <input type="number" class="inputGlucose" name="Glucose" id="Glucose">
+        <br>
+        <label for="DBF">DiabetesPedigreeFunction: </label>
+        <input type="number" class="inputDBF" name="DBF" id="DBF">
+        <br>
+        <label for="Skinthickness">Skinthickness: </label>
+        <input type="number" class="inputSKT" name="Skinthickness" id="Skinthickness">
+        <br>
+        <label for="insulin">Insulin: </label>
+        <input type="number" class="inputInsulin" name="insulin" id="insulin">
+        <button onclick="Submit()">Submit</button>
+    </div>
+    <div class="Output" id="Output_container">
+        <div class="outputHedder">
+            Output
+        </div>
+        <div id="Output"></div>
+        <div id="Image"></div>
+    </div>
+    <script src="../static/js/Diabetes_script.js"></script>
+</body>
+</html>
