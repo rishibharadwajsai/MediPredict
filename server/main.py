@@ -8,7 +8,7 @@ import numpy as np
 # Covid Model
 class Covid_Model:
     def predict( self , images):
-        model = tf.keras.models.load_model("./server/covid19_CNN")
+        model = tf.keras.models.load_model("./covid19_CNN")
         class_names = ["covid" , "Normal" , "Viral Pneumonia"]
         #plt.imshow(images)
         # Optionally, resize the image
@@ -78,7 +78,7 @@ class Cardiac_Model:
     
     def predict(L):
         res = []
-        model_path = os.path.join('./server/cardio_disease_prob')
+        model_path = os.path.join('./cardio_disease_prob')
         model = joblib.load(model_path)
         res.append(L[0]) # age index-0
         res.append(L[3]) # ap_hi index-1
@@ -100,7 +100,7 @@ class Cardiac_Model:
 class Diabetes_Model:
     def Predicit(L):
         DB = {0:"NO DB" , 1:"DB"}
-        model = joblib.load("./server/Diabetes.joblib")
+        model = joblib.load("./Diabetes.joblib")
         result = model.predict_proba(L)
         print(DB[np.argmax(result)])
         return result
