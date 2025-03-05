@@ -3,51 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <title>MediPredict - Diabetes Prediction</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <title>Diabetes</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0891b2', // cyan-600
+              secondary: '#0e7490', // cyan-700
+              accent: '#14b8a6', // teal-500
+              background: '#f0fdfa', // teal-50
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      .glass {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+      
+      body {
+        background-color: #f0fdfa;
+      }
+      
+      input:focus {
+        outline: none;
+        border-color: #0891b2;
+        box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.2);
+      }
+    </style>
 </head>
-<body>
-    <div class="Title">Diabetes Prediction for Women</div>
-    <div class="Input_container">
-        <label for="name">name: </label>
-        <input type="text" class="inputName" name="name" id="name" >
-        <br>
-        <label for="age">Age: </label>
-        <input type="number" class="input_Age" name="age" id="age">
-        <br>
-        <label for="Height">Height:</label>
-        <input type="number" class="input_Height" name="Height" id="Height">
-        <br>
-        <label for="Weight">Weight:</label>
-        <input type="number" class="input_Weight" name="Weight" id="Weight">
-        <br>
-        <label for="BloodPressure">BloodPressure: </label>
-        <input type="number" class="input_BP" name="BloodPressure" id="BloodPressure">
-        <br>
-        <label for="Pregnancies">No of Pregnancies:</label>
-        <input type="number" class="inputPregnancies" name="Pregnancies" id="Pregnancies">
-        <br>
-        <label for="Glucose">Glucose &nbsp; levels :</label>
-        <input type="number" class="inputGlucose" name="Glucose" id="Glucose">
-        <br>
-        <label for="DBF">DiabetesPedigreeFunction: </label>
-        <input type="number" class="inputDBF" name="DBF" id="DBF">
-        <br>
-        <label for="Skinthickness">Skinthickness: </label>
-        <input type="number" class="inputSKT" name="Skinthickness" id="Skinthickness">
-        <br>
-        <label for="insulin">Insulin: </label>
-        <input type="number" class="inputInsulin" name="insulin" id="insulin">
-        <button onclick="Submit()">Submit</button>
-    </div>
-    <div class="Output" id="Output_container">
-        <div class="outputHedder">
-            Output
+<body class="min-h-screen bg-background text-gray-800">
+    <!-- Navbar starts -->
+    <nav class="glass sticky top-0 z-50 px-4 py-3 shadow-lg">
+      <div class="container mx-auto flex items-center justify-between">
+        <a href="/" class="text-2xl font-bold text-primary">MediPredict</a>
+        <div class="flex space-x-4">
+          <a href="/" class="rounded-lg bg-primary px-4 py-2 font-medium text-white transition hover:bg-secondary">Home</a>
+          <a href="/static/input.html" class="rounded-lg bg-primary px-4 py-2 font-medium text-white transition hover:bg-secondary">Heart Disease</a>
+          <a href="/static/Diabetes_page.html" class="rounded-lg bg-accent px-4 py-2 font-medium text-white transition hover:bg-teal-600">Diabetes</a>
+          <a href="/static/covid_page.html" class="rounded-lg bg-primary px-4 py-2 font-medium text-white transition hover:bg-secondary">Covid</a>
         </div>
-        <div id="Output"></div>
-        <div id="Image"></div>
+      </div>
+    </nav>
+    <!-- Navbar ends -->
+
+    <div class="container mx-auto px-4 py-8">
+      <div class="glass mx-auto mb-8 max-w-3xl rounded-2xl p-8 shadow-xl">
+        <h2 class="mb-8 text-center text-3xl font-bold text-primary">Diabetes Prediction for Women</h2>
+        
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="space-y-2">
+            <label for="name" class="block font-medium text-gray-700">Name</label>
+            <input
+              type="text"
+              class="w-full rounded-lg border border-gray-300 bg-white/70 px-4 py-2 transition duration-200"
+              name="name"
+              id="name"
+              placeholder="Enter your name"
+            />
+          </div>
+          
+          <div class="space-y-2">
+            <label for="age" class="block font-medium text-gray-700">Age</label>
+            <input
+              type="number"
+              class="w-full rounded-lg border border-gray-300 bg-white/70 px-4 py-2 transition duration-200"
+              name="age"
+              id="age"
+              placeholder="Enter your age"
+            />
+          </div>
+          
+          <div class="space-y-2">
+            <label for="Height" class="block font-medium text-gray-700">Height (cm)</label>
+            <input
+              type="number"
+              class="w-full rounded-lg border border-gray-300 bg-white/70 px-4 py-2 transition duration-200"
+              name="Height"
+              id="Height"
+              placeholder="Height in cm"
+            />
+          </div>
+          
+          <div class="space-y-2">
+            <label for="Weight" class="block font-medium text-gray-700">Weight (kg)</label>
+            <input
+              type="number"
+              class="w-full rounded-lg border border-gray-300 bg-white/70 px-4 py-2 transition duration-200"
+              name="Weight"
+              id="Weight"
+              placeholder="Weight in kg"
+            />
+          </div>
+          
+          <div class="space-y-2">
+            <label for="BloodPressure" class="block font-medium text-gray-700">Blood Pressure</label>
+            <input
+              type="number"
+              class="w-full rounded-lg border border-gray-300 bg-white/70 px-4 py-2 transition duration-200"
+              name="BloodPressure"
+              id="BloodPressure"
+              placeholder="Blood pressure"
+            />
+          </div>
+          
+          <div class="space-y-2">
+            <label for="Pregnancies" class="block font-medium text-gray-700">Number of Pregnancies</label>
+            <input
+              type="number"
+              class="w-full rounded-lg border border-gray-300 bg-white/70 px-4 py-2 transition duration-200"
+              name="Pregnancies"
+              id="Pregnancies"
+              placeholder="Number of pregnancies"
+            />
+          </div>
+          
+          <div class="space-y-2">
+            <label for="Glucose" class="block font-medium text-gray-700">Glucose Level</label>
+            <input
+              type="number"
+              class="w-full rounded-lg border border-gray-300 bg-white/70 px-4 py-2 transition duration-200"
+              name="Glucose"
+              id="Glucose"
+              placeholder="Glucose level"
+            />
+          </div>
+          
+          <div class="space-y-2">
+            <label for="DBF" class="block font-medium text-gray-700">Diabetes Pedigree Function</label>
+            <input
+              type="number"
+              class="w-full rounded-lg border border-gray-300 bg-white/70 px-4 py-2 transition duration-200"
+              name="DBF"
+              id="DBF"
+              placeholder="Diabetes pedigree function"
+            />
+          </div>
+          
+          <div class="space-y-2">
+            <label for="Skinthickness" class="block font-medium text-gray-700">Skin Thickness</label>
+            <input
+              type="number"
+              class="w-full rounded-lg border border-gray-300 bg-white/70 px-4 py-2 transition duration-200"
+              name="Skinthickness"
+              id="Skinthickness"
+              placeholder="Skin thickness"
+            />
+          </div>
+          
+          <div class="space-y-2">
+            <label for="insulin" class="block font-medium text-gray-700">Insulin</label>
+            <input
+              type="number"
+              class="w-full rounded-lg border border-gray-300 bg-white/70 px-4 py-2 transition duration-200"
+              name="insulin"
+              id="insulin"
+              placeholder="Insulin level"
+            />
+          </div>
+        </div>
+        
+        <div class="mt-8 text-center">
+          <button 
+            onclick="Submit()" 
+            class="rounded-lg bg-accent px-8 py-3 font-semibold text-white transition hover:bg-teal-600 hover:shadow-lg"
+          >
+            Predict Results
+          </button>
+        </div>
+      </div>
+
+      <div class="glass mx-auto max-w-3xl rounded-2xl p-8 shadow-xl">
+        <h2 class="mb-6 text-center text-3xl font-bold text-primary">Results</h2>
+        <div id="Output_container" class="min-h-[300px] rounded-xl bg-white/50 p-6">
+          <div id="Output" class="mb-4 text-center text-xl"></div>
+          <div id="Image" class="flex justify-center"></div>
+        </div>
+      </div>
     </div>
+
     <script src="../static/js/Diabetes_script.js"></script>
 </body>
 </html>
