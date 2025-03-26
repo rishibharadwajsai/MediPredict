@@ -18,7 +18,7 @@ idna==3.7
 itsdangerous==2.2.0
 Jinja2==3.1.5
 joblib==1.4.2
-keras==3.8.0
+keras==3.9.0
 kiwisolver==1.4.5
 libclang==18.1.1
 Markdown==3.6
